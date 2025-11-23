@@ -1,0 +1,79 @@
+************* Module validations.validation
+src\validations\validation.py:1:0: R0801: Similar lines in 2 files
+==ui.agregar_organos:[53:75]
+==ui.editar_organos:[49:71]
+    btns_container = ctk.CTkFrame(modal, fg_color="transparent")
+    btns_container.pack(pady=12, anchor="center")
+
+    ctk.CTkButton(
+        btns_container,
+        text="Aceptar",
+        command=aceptar,
+        fg_color="#008A07",
+        width=120,
+        height=34,
+    ).pack(side="left", padx=12)
+
+    ctk.CTkButton(
+        btns_container,
+        text="Cancelar",
+        command=modal.destroy,
+        fg_color="#C90000",
+        width=120,
+        height=34,
+    ).pack(side="left", padx=12)
+
+    modal.wait_window() (duplicate-code)
+src\validations\validation.py:1:0: R0801: Similar lines in 2 files
+==ui.agregar_organos:[60:75]
+==ui.eliminar_organos:[37:52]
+        fg_color="#008A07",
+        width=120,
+        height=34,
+    ).pack(side="left", padx=12)
+
+    ctk.CTkButton(
+        btns_container,
+        text="Cancelar",
+        command=modal.destroy,
+        fg_color="#C90000",
+        width=120,
+        height=34,
+    ).pack(side="left", padx=12)
+
+    modal.wait_window() (duplicate-code)
+src\validations\validation.py:1:0: R0801: Similar lines in 2 files
+==ui.agregar_organos:[33:43]
+==ui.editar_organos:[27:37]
+    txt_desc.pack(pady=6)
+
+    def aceptar():
+        nombre = entry_nombre.get().strip()
+        precio = entry_precio.get().strip()
+        desc = txt_desc.get("0.0", "end").strip()
+        if not nombre:
+            messagebox.showwarning("Validación", "El nombre no puede estar vacío.")
+            return
+        try: (duplicate-code)
+src\validations\validation.py:1:0: R0801: Similar lines in 2 files
+==ui.agregar_organos:[44:50]
+==ui.editar_organos:[38:46]
+            if on_success:
+                on_success()
+            modal.destroy()
+        except ValueError as err:
+            messagebox.showwarning("Validación", str(err))
+        except pymysql.MySQLError as err: (duplicate-code)
+src\validations\validation.py:1:0: R0801: Similar lines in 2 files
+==ui.agregar_organos:[53:59]
+==ui.eliminar_organos:[30:36]
+    btns_container = ctk.CTkFrame(modal, fg_color="transparent")
+    btns_container.pack(pady=12, anchor="center")
+
+    ctk.CTkButton(
+        btns_container,
+        text="Aceptar", (duplicate-code)
+
+------------------------------------------------------------------
+Your code has been rated at 9.84/10 (previous run: 9.87/10, -0.03)
+

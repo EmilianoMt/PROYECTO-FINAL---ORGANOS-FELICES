@@ -1,0 +1,18 @@
+2025-11-23 14:30:43,853 - INFO - Órgano insertado: Test Órgano, Precio: 1234.5
+2025-11-23 14:30:43,868 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:30:43,885 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:30:43,908 - INFO - Órgano actualizado: ID 6, Nombre: Test Actualizado
+2025-11-23 14:30:43,913 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:30:43,927 - INFO - Órgano insertado: Temp A Eliminar, Precio: 10
+2025-11-23 14:30:43,936 - INFO - Órgano eliminado: ID 7
+2025-11-23 14:30:43,961 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:30:43,978 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:30:43,994 - INFO - Órgano eliminado: ID 6
+2025-11-23 14:36:38,596 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:37:16,235 - INFO - Órgano insertado: Pancreas, Precio: 80000
+2025-11-23 14:37:16,238 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:37:24,311 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:40:48,568 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:44:41,984 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:45:47,369 - INFO - Órganos obtenidos exitosamente
+2025-11-23 14:45:56,688 - INFO - Órganos obtenidos exitosamente
