@@ -1,4 +1,3 @@
--- Crear BD, tabla y filas de ejemplo
 CREATE DATABASE IF NOT EXISTS organos_felices CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE organos_felices;
 

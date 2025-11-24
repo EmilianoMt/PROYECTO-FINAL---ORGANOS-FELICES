@@ -1,3 +1,6 @@
+************* Module ui.principal
+src\ui\principal.py:77:0: R0914: Too many local variables (18/15) (too-many-locals)
+src\ui\principal.py:77:0: R0915: Too many statements (57/50) (too-many-statements)
 ************* Module validations.validation
 src\validations\validation.py:1:0: R0801: Similar lines in 2 files
 ==ui.agregar_organos:[53:75]
@@ -75,5 +78,5 @@ src\validations\validation.py:1:0: R0801: Similar lines in 2 files
         text="Aceptar", (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.84/10 (previous run: 9.87/10, -0.03)
+Your code has been rated at 9.79/10 (previous run: 9.76/10, +0.03)
 

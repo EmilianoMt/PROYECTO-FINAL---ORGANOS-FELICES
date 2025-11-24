@@ -3,6 +3,7 @@ Módulo principal de la interfaz gráfica de usuario.
 """
 import os
 from tkinter import messagebox
+import logging
 from PIL import Image
 import customtkinter as ctk
 
@@ -24,6 +25,9 @@ def crear_tarjeta(padre, producto, idx, abrir_editar_cb, abrir_eliminar_cb):
     tarjeta.grid(row=idx[0], column=idx[1], padx=12, pady=12, sticky="nsew")
     try:
         img_path = producto.get("imagen_path", "") or "estomago.png"
+        if img_path and os.path.isabs(img_path) is False:
+            base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+            img_path = os.path.join(base, img_path)
         if img_path and os.path.exists(img_path):
             with Image.open(img_path) as im:
                 img = ctk.CTkImage(light_image=im.copy(), size=(180, 120))
@@ -72,6 +76,8 @@ def crear_tarjeta(padre, producto, idx, abrir_editar_cb, abrir_eliminar_cb):
 
 def main():
     """Arranca la GUI principal (lista, agregar, editar y eliminar)."""
+    general = logging.getLogger("general")
+    general.info("Aplicación GUI iniciada")
     datos_productos = []
 
     def load_from_db():
@@ -111,12 +117,38 @@ def main():
 
     header = ctk.CTkFrame(ventana, height=100, fg_color="#000000")
     header.pack(fill="x")
+
+    header_inner = ctk.CTkFrame(header, fg_color="transparent")
+    header_inner.pack(fill="both", expand=True, padx=12, pady=8)
+
+    try:
+        logo_path = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "..", "estomago.png")
+        )
+        if os.path.exists(logo_path):
+            with Image.open(logo_path) as im:
+                logo_img = ctk.CTkImage(light_image=im.copy(), size=(80, 80))
+            logo_lbl = ctk.CTkLabel(header_inner, image=logo_img, text="")
+            header_inner.logo_img = logo_img
+            logo_lbl.pack(side="right", padx=(12, 20), pady=6)
+        else:
+            raise FileNotFoundError
+    except (FileNotFoundError, OSError):
+        ctk.CTkLabel(
+            header_inner,
+            text="[LOGO]",
+            width=80,
+            height=80,
+            fg_color="#000000",
+            text_color="white",
+        ).pack(side="left", padx=(12, 20), pady=6)
+
     ctk.CTkLabel(
-        header,
+        header_inner,
         text="ORGANOS\nFELICES",
         font=("Arial Black", 28),
         text_color="white",
-    ).place(relx=0.85, rely=0.5, anchor="center")
+    ).pack(side="right", anchor="center")
 
     products_container = ctk.CTkFrame(ventana, fg_color="white")
     products_container.pack(fill="both", expand=True, padx=20, pady=20)
@@ -142,7 +174,9 @@ def main():
         for i, p in enumerate(datos_productos):
             r = i // col_max
             c = i % col_max
-            crear_tarjeta(scrollable, p, (r, c, i), abrir_editar_callback, abrir_eliminar_callback)
+            crear_tarjeta(
+                scrollable, p, (r, c, i), abrir_editar_callback, abrir_eliminar_callback
+            )
 
         for i in range(col_max):
             scrollable.grid_columnconfigure(i, weight=1)
@@ -159,9 +193,21 @@ def main():
 
     ventana.protocol(
         "WM_DELETE_WINDOW",
-        lambda: (ventana.destroy() if messagebox.askyesno("Salir",  "¿Desea cerrar la aplicación?\nRecuerde que esto es confidencial," \
-        "\nasegúrese que nadie lo observe." ) else None),
-
+        lambda: (
+            ventana.destroy()
+            if messagebox.askyesno(
+                "Salir",
+                "¿Desea cerrar la aplicación?\n" \
+                "Recuerde que esto es confidencial,\n" \
+                "asegúrese que nadie lo observe.",
+            )
+            else None
+        ),
     )
+
     load_from_db()
     ventana.mainloop()
+
+
+if __name__ == "__main__":
+    main()

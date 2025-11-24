@@ -1,12 +1,14 @@
 """
 CRUD para la tabla organos.
 """
+import logging
 import pymysql
 from src.db.db import get_connection
-from src.log.logging_config import setup_loggers
 from src.validations.validation import validate_nombre, validate_precio, validate_descripcion
 
-general, log_transacciones, log_errores = setup_loggers()
+general = logging.getLogger("general")
+log_transacciones = logging.getLogger("transacciones")
+log_errores = logging.getLogger("errores")
 
 def obtener_organos():
     """Retorna lista de dicts: id_organo, nombre, descripcion, precio"""

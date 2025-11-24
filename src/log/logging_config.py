@@ -4,7 +4,7 @@ Configuración de loggers para la aplicación.
 import logging
 import os
 
-LOG_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "logs"))
+LOG_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__),"..", "..", "logs"))
 os.makedirs(LOG_DIR, exist_ok=True)
 
 def setup_loggers():
