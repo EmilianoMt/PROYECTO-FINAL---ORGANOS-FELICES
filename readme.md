@@ -1,4 +1,8 @@
-# ORGÁNOS - Instrucciones de ejecución local
+# ORGÁNOS FELICES - Instrucciones de ejecución local
+
+Integrantes
+- Jesús Eliseo Colunga Martínez
+- Marco Emiliano Portillo Martínez
 
 Requisitos
 - Python 3.8+ instalado.

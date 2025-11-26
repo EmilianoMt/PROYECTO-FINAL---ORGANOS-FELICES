@@ -6,7 +6,7 @@ import pymysql
 from pymysql.cursors import DictCursor
 
 def get_connection():
-    """Devuelve una conexión pymysql usando variables fijas (no variables de entorno)."""
+    """Devuelve una conexión pymysql usando variables fijas."""
     host = "localhost"
     user = "root"
     password = "1234"

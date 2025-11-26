@@ -18,17 +18,14 @@ def open_agregar(parent, on_success=None):
 
     ctk.CTkLabel(modal, text="AGREGAR ÓRGANO", font=("Arial Black", 20)).pack(pady=12)
 
-    # Etiqueta + input Nombre
     ctk.CTkLabel(modal, text="Nombre:", anchor="w").pack(fill="x", padx=90)
     entry_nombre = ctk.CTkEntry(modal, width=520)
     entry_nombre.pack(pady=6)
 
-    # Etiqueta + input Precio
     ctk.CTkLabel(modal, text="Precio:", anchor="w").pack(fill="x", padx=90)
     entry_precio = ctk.CTkEntry(modal, width=520)
     entry_precio.pack(pady=6)
 
-    # Etiqueta + textarea Descripción
     ctk.CTkLabel(modal, text="Descripción:", anchor="w").pack(fill="x", padx=90)
     txt_desc = ctk.CTkTextbox(modal, width=520, height=140)
     txt_desc.pack(pady=6)
@@ -50,7 +47,6 @@ def open_agregar(parent, on_success=None):
         except pymysql.MySQLError as err:
             messagebox.showerror("Error de base de datos", f"No se pudo insertar:\n{err}")
 
-    # contenedor de botones centrado
     btns_container = ctk.CTkFrame(modal, fg_color="transparent")
     btns_container.pack(pady=12, anchor="center")
 

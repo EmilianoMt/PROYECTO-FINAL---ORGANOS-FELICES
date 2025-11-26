@@ -63,3 +63,10 @@
 2025-11-24 11:34:13,909 - INFO - Órganos obtenidos exitosamente
 2025-11-24 11:34:22,252 - INFO - Órgano eliminado: ID 8
 2025-11-24 11:34:22,260 - INFO - Órganos obtenidos exitosamente
+2025-11-24 11:54:21,737 - INFO - Órganos obtenidos exitosamente
+2025-11-24 11:55:03,654 - INFO - Órgano insertado: Corazón Adulto, Precio: 13000
+2025-11-24 11:55:03,656 - INFO - Órganos obtenidos exitosamente
+2025-11-24 11:56:23,003 - INFO - Órgano actualizado: ID 15, Nombre: Corazón Adulto
+2025-11-24 11:56:23,008 - INFO - Órganos obtenidos exitosamente
+2025-11-24 11:56:35,027 - INFO - Órgano eliminado: ID 15
+2025-11-24 11:56:35,034 - INFO - Órganos obtenidos exitosamente

@@ -40,13 +40,10 @@ def open_editar(parent, producto: dict, on_success=None):
                 on_success()
             modal.destroy()
         except ValueError as err:
-            # errores de validación lanzados por la capa de negocio
             messagebox.showwarning("Validación", str(err))
         except pymysql.MySQLError as err:
-            # errores relacionados con la base de datos
             messagebox.showerror("Error de base de datos", f"No se pudo actualizar:\n{err}")
 
-    # contenedor de botones centrado
     btns_container = ctk.CTkFrame(modal, fg_color="transparent")
     btns_container.pack(pady=12, anchor="center")
 

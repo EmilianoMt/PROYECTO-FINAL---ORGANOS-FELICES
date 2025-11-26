@@ -27,7 +27,6 @@ def confirmar_eliminar(parent, id_organo, nombre, on_success=None):
         except pymysql.MySQLError as err:
             messagebox.showerror("Error de base de datos", f"No se pudo eliminar:\n{err}")
 
-    # contenedor de botones centrado
     btns_container = ctk.CTkFrame(modal, fg_color="transparent")
     btns_container.pack(pady=12, anchor="center")
 

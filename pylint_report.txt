@@ -3,8 +3,8 @@ src\ui\principal.py:77:0: R0914: Too many local variables (18/15) (too-many-loca
 src\ui\principal.py:77:0: R0915: Too many statements (57/50) (too-many-statements)
 ************* Module validations.validation
 src\validations\validation.py:1:0: R0801: Similar lines in 2 files
-==ui.agregar_organos:[53:75]
-==ui.editar_organos:[49:71]
+==ui.agregar_organos:[49:71]
+==ui.editar_organos:[46:68]
     btns_container = ctk.CTkFrame(modal, fg_color="transparent")
     btns_container.pack(pady=12, anchor="center")
 
@@ -28,8 +28,8 @@ src\validations\validation.py:1:0: R0801: Similar lines in 2 files
 
     modal.wait_window() (duplicate-code)
 src\validations\validation.py:1:0: R0801: Similar lines in 2 files
-==ui.agregar_organos:[60:75]
-==ui.eliminar_organos:[37:52]
+==ui.agregar_organos:[56:71]
+==ui.eliminar_organos:[36:51]
         fg_color="#008A07",
         width=120,
         height=34,
@@ -46,7 +46,7 @@ src\validations\validation.py:1:0: R0801: Similar lines in 2 files
 
     modal.wait_window() (duplicate-code)
 src\validations\validation.py:1:0: R0801: Similar lines in 2 files
-==ui.agregar_organos:[33:43]
+==ui.agregar_organos:[30:40]
 ==ui.editar_organos:[27:37]
     txt_desc.pack(pady=6)
 
@@ -55,21 +55,21 @@ src\validations\validation.py:1:0: R0801: Similar lines in 2 files
         precio = entry_precio.get().strip()
         desc = txt_desc.get("0.0", "end").strip()
         if not nombre:
-            messagebox.showwarning("Validación", "El nombre no puede estar vacío.")
+            messagebox.showwarning("Validaciï¿½n", "El nombre no puede estar vacï¿½o.")
             return
         try: (duplicate-code)
 src\validations\validation.py:1:0: R0801: Similar lines in 2 files
-==ui.agregar_organos:[44:50]
-==ui.editar_organos:[38:46]
+==ui.agregar_organos:[41:47]
+==ui.editar_organos:[38:44]
             if on_success:
                 on_success()
             modal.destroy()
         except ValueError as err:
-            messagebox.showwarning("Validación", str(err))
+            messagebox.showwarning("Validaciï¿½n", str(err))
         except pymysql.MySQLError as err: (duplicate-code)
 src\validations\validation.py:1:0: R0801: Similar lines in 2 files
-==ui.agregar_organos:[53:59]
-==ui.eliminar_organos:[30:36]
+==ui.agregar_organos:[49:55]
+==ui.eliminar_organos:[29:35]
     btns_container = ctk.CTkFrame(modal, fg_color="transparent")
     btns_container.pack(pady=12, anchor="center")
 
@@ -78,5 +78,5 @@ src\validations\validation.py:1:0: R0801: Similar lines in 2 files
         text="Aceptar", (duplicate-code)
 
 ------------------------------------------------------------------
-Your code has been rated at 9.79/10 (previous run: 9.76/10, +0.03)
+Your code has been rated at 9.79/10 (previous run: 8.43/10, +1.36)
 
